@@ -1,0 +1,12 @@
+Configuring HDBC-sqlite3-2.3.3.1...
+Preprocessing library for HDBC-sqlite3-2.3.3.1..
+Building library for HDBC-sqlite3-2.3.3.1..
+[1 of 7] Compiling Database.HDBC.Sqlite3.ConnectionImpl ( Database/HDBC/Sqlite3/ConnectionImpl.hs, .stack-work/dist/x86_64-linux/Cabal-2.2.0.1/build/Database/HDBC/Sqlite3/ConnectionImpl.o )
+[2 of 7] Compiling Database.HDBC.Sqlite3.Consts ( .stack-work/dist/x86_64-linux/Cabal-2.2.0.1/build/Database/HDBC/Sqlite3/Consts.hs, .stack-work/dist/x86_64-linux/Cabal-2.2.0.1/build/Database/HDBC/Sqlite3/Consts.o )
+[3 of 7] Compiling Database.HDBC.Sqlite3.Types ( Database/HDBC/Sqlite3/Types.hs, .stack-work/dist/x86_64-linux/Cabal-2.2.0.1/build/Database/HDBC/Sqlite3/Types.o )
+[4 of 7] Compiling Database.HDBC.Sqlite3.Utils ( .stack-work/dist/x86_64-linux/Cabal-2.2.0.1/build/Database/HDBC/Sqlite3/Utils.hs, .stack-work/dist/x86_64-linux/Cabal-2.2.0.1/build/Database/HDBC/Sqlite3/Utils.o )
+[5 of 7] Compiling Database.HDBC.Sqlite3.Statement ( .stack-work/dist/x86_64-linux/Cabal-2.2.0.1/build/Database/HDBC/Sqlite3/Statement.hs, .stack-work/dist/x86_64-linux/Cabal-2.2.0.1/build/Database/HDBC/Sqlite3/Statement.o )
+[6 of 7] Compiling Database.HDBC.Sqlite3.Connection ( Database/HDBC/Sqlite3/Connection.hs, .stack-work/dist/x86_64-linux/Cabal-2.2.0.1/build/Database/HDBC/Sqlite3/Connection.o )
+[7 of 7] Compiling Database.HDBC.Sqlite3 ( Database/HDBC/Sqlite3.hs, .stack-work/dist/x86_64-linux/Cabal-2.2.0.1/build/Database/HDBC/Sqlite3.o )
+Installing library in /homes/oh302/movie/.stack-work/install/x86_64-linux/lts-12.18/8.4.4/lib/x86_64-linux-ghc-8.4.4/HDBC-sqlite3-2.3.3.1-IVgiC17T3QK9c2VxVnmJ6r
+Registering library for HDBC-sqlite3-2.3.3.1..
