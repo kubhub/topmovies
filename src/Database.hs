@@ -84,9 +84,9 @@ insertThree =
 	\starringID) \
 	\VALUES (?,?)"
 
-	-- | populateMovies populates movie data into a table of its own.
-	-- | Begins by preparing Connections
-	-- | Then inserts and Commit
+-- | populateMovies populates movie data into a table of its own.
+-- | Begins by preparing Connections
+-- | Then inserts and Commit
 
 populateMovies :: IO ()
 populateMovies = do

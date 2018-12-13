@@ -61,16 +61,16 @@ parseMovies movieDetails = listOfMovies
     convertRank = convStrToInt rank
     listOfMovies = map movie convertRank
 
--- | Converts to a list of Int's
+    -- | Converts to a list of Int's
     convStrToInt :: [String] -> [Int]
     convStrToInt = map read
 
--- | Removes whitespace from element
+    -- | Removes whitespace from element
     trim :: String -> String
     trim = f . f
 	where f = reverse . dropWhile isSpace
 
--- This functions breaks the list as long as the elements meet the predicate
+    -- This functions breaks the list as long as the elements meet the predicate
     listBreak :: (a -> Bool) -> [a] -> [[a]]
     listBreak pred [] = []
     listBreak pred [x] = [[x]]
