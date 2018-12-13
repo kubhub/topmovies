@@ -8,11 +8,17 @@ import Data.Maybe
 import Data.Either
 import qualified Data.ByteString.Lazy as L
 import qualified Data.ByteString as B
+import Control.Exception
+
 -- | Download all movies from rotten tomatoes
 downloadMovies :: String -> String -> IO()
-downloadMovies name url = do
-    contents <- simpleHttp url
-    L.writeFile name contents
+downloadMovies name url = catch (do
+					contents <- simpleHttp url
+					putStrLn $ "Downloading file: " ++ url
+					L.writeFile name contents)
+				(\e -> case e of
+				      	HttpExceptionRequest{} -> putStrLn "Http request failed"
+				      	InvalidUrlException{} -> putStrLn "Bad URL")
 -- | Saves the page as rottentomatoes.html
 downloadPage :: IO()
 downloadPage = do

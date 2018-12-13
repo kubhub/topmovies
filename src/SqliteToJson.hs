@@ -22,7 +22,7 @@ data Movies = Movies {
       rank :: Int,          --Movie Rank
       name :: String,       --Movie name
       year :: Int,          --Year produced
-      rating :: Double,     --Rating by rottentomatoes
+      rating :: Int,     --Rating by rottentomatoes
       dirFName :: String,   --D. First Name
       dirLName :: String    --D. Last Name
       } deriving (Eq, Generic, Show)

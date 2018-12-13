@@ -1,0 +1,885 @@
+
+==================== FINAL INTERFACE ====================
+2018-12-13 10:29:09.111278723 UTC
+
+interface topmovies-0.1.0.0-HqDPykmlaSdETrGbngTKrW:DatabaseQueries 8044
+  interface hash: 5abf242296f6b464464d65cfdce4a65a
+  ABI hash: ca09c816bae39e271b22bab9661bffcd
+  export-list hash: 38084033bb04b9d6c61ae83e2889565a
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 1f596daf84c7527444ae092b33472386
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  DatabaseQueries.actorFrequency
+  DatabaseQueries.delByMovieName
+  DatabaseQueries.dirByMovieName
+  DatabaseQueries.movieByActorName
+  DatabaseQueries.rankByMovieName
+  DatabaseQueries.ratingByMovieName
+  DatabaseQueries.starringByMovieName
+  DatabaseQueries.updByMovieName
+module dependencies: Database DownloadMovies MovieDataType
+                     ParseResponse
+package dependencies: HDBC-2.4.0.2 HDBC-sqlite3-2.3.3.1
+                      aeson-1.3.1.1 array-0.5.2.0 asn1-encoding-0.9.5 asn1-parse-0.9.4
+                      asn1-types-0.3.2 async-2.2.1 attoparsec-0.13.2.2 base-4.11.1.0
+                      base-compat-0.10.5 basement-0.0.8 binary-0.8.5.1
+                      blaze-builder-0.4.1.0 bytestring-0.10.8.2 case-insensitive-1.2.0.11
+                      cereal-0.5.7.0 conduit-1.3.1 connection-0.2.8 containers-0.5.11.0
+                      convertible-1.1.1.0 cookie-0.4.4 cryptonite-0.25
+                      data-default-class-0.1.2.0 deepseq-1.4.3.0 directory-1.3.1.5
+                      dlist-0.8.0.5 exceptions-0.10.0 filepath-1.4.2 ghc-boot-th-8.4.4
+                      ghc-prim-0.5.2.0 hashable-1.2.7.0 hourglass-0.2.12
+                      http-client-0.5.13.1 http-client-tls-0.3.5.3 http-conduit-2.3.2
+                      http-types-0.12.2 integer-gmp-1.0.2.0 integer-logarithms-1.0.2.2
+                      memory-0.14.18 mtl-2.2.2 network-2.6.3.6 network-uri-2.6.1.0
+                      old-locale-1.0.0.7 old-time-1.1.0.3 parsec-3.1.13.0 pem-0.2.4
+                      primitive-0.6.3.0 random-1.1 resourcet-1.2.2 scientific-0.3.6.2
+                      socks-0.5.6 stm-2.4.5.1 streaming-commons-0.2.1.0 tagged-0.8.5
+                      template-haskell-2.13.0.0 text-1.2.3.1 time-1.8.0.2
+                      time-locale-compat-0.1.1.5 tls-1.4.1 transformers-0.5.5.0
+                      unix-2.7.2.2 unliftio-core-0.1.2.0 unordered-containers-0.2.9.0
+                      utf8-string-1.0.1.1 uuid-types-1.0.3 vector-0.12.0.1 x509-1.7.5
+                      x509-store-1.6.7 x509-system-1.6.6 x509-validation-1.6.11
+                      zlib-0.6.2
+orphans: http-client-0.5.13.1:Network.HTTP.Client.Request
+         basement-0.0.8:Basement.UArray.Base basement-0.0.8:Basement.Block
+         network-2.6.3.6:Network.Socket stm-2.4.5.1:Control.Monad.STM
+         attoparsec-0.13.2.2:Data.Attoparsec.Text.Internal
+         attoparsec-0.13.2.2:Data.Attoparsec.ByteString.Char8
+         vector-0.12.0.1:Data.Vector.Unboxed
+         hashable-1.2.7.0:Data.Hashable.Generic
+         vector-0.12.0.1:Data.Vector.Fusion.Bundle
+         convertible-1.1.1.0:Data.Convertible.Instances.C
+         convertible-1.1.1.0:Data.Convertible.Instances.Map
+         convertible-1.1.1.0:Data.Convertible.Instances.Text
+         convertible-1.1.1.0:Data.Convertible.Instances.Time
+         convertible-1.1.1.0:Data.Convertible.Instances.Num
+         transformers-0.5.5.0:Control.Monad.Trans.Error
+         time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian
+         text-1.2.3.1:Data.Text.Lazy text-1.2.3.1:Data.Text
+         binary-0.8.5.1:Data.Binary.Generic
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         text-1.2.3.1:Data.Text.Show base-4.11.1.0:GHC.Float
+         base-4.11.1.0:GHC.Base
+family instance modules: aeson-1.3.1.1:Data.Aeson.Types.Internal
+                         attoparsec-0.13.2.2:Data.Attoparsec.Internal.Types
+                         base-4.11.1.0:Control.Applicative base-4.11.1.0:Data.Complex
+                         base-4.11.1.0:Data.Functor.Compose base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         basement-0.0.8:Basement.Block.Base basement-0.0.8:Basement.Monad
+                         basement-0.0.8:Basement.MutableBuilder basement-0.0.8:Basement.Nat
+                         basement-0.0.8:Basement.NonEmpty
+                         basement-0.0.8:Basement.Numerical.Subtractive
+                         basement-0.0.8:Basement.PrimType basement-0.0.8:Basement.String
+                         basement-0.0.8:Basement.String.Encoding.ASCII7
+                         basement-0.0.8:Basement.String.Encoding.ISO_8859_1
+                         basement-0.0.8:Basement.String.Encoding.UTF16
+                         basement-0.0.8:Basement.String.Encoding.UTF32
+                         basement-0.0.8:Basement.Types.OffsetSize
+                         basement-0.0.8:Basement.UArray.Base
+                         basement-0.0.8:Basement.UTF8.Base
+                         conduit-1.3.1:Data.Conduit.Internal.Conduit
+                         conduit-1.3.1:Data.Conduit.Internal.Pipe
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         cryptonite-0.25:Crypto.ECC cryptonite-0.25:Crypto.Error.Types
+                         cryptonite-0.25:Crypto.Hash.Blake2
+                         cryptonite-0.25:Crypto.Hash.Blake2b
+                         cryptonite-0.25:Crypto.Hash.Blake2bp
+                         cryptonite-0.25:Crypto.Hash.Blake2s
+                         cryptonite-0.25:Crypto.Hash.Blake2sp
+                         cryptonite-0.25:Crypto.Hash.Keccak cryptonite-0.25:Crypto.Hash.MD2
+                         cryptonite-0.25:Crypto.Hash.MD4 cryptonite-0.25:Crypto.Hash.MD5
+                         cryptonite-0.25:Crypto.Hash.RIPEMD160
+                         cryptonite-0.25:Crypto.Hash.SHA1 cryptonite-0.25:Crypto.Hash.SHA224
+                         cryptonite-0.25:Crypto.Hash.SHA256 cryptonite-0.25:Crypto.Hash.SHA3
+                         cryptonite-0.25:Crypto.Hash.SHA384
+                         cryptonite-0.25:Crypto.Hash.SHA512
+                         cryptonite-0.25:Crypto.Hash.SHA512t
+                         cryptonite-0.25:Crypto.Hash.SHAKE
+                         cryptonite-0.25:Crypto.Hash.Skein256
+                         cryptonite-0.25:Crypto.Hash.Skein512
+                         cryptonite-0.25:Crypto.Hash.Tiger
+                         cryptonite-0.25:Crypto.Hash.Whirlpool dlist-0.8.0.5:Data.DList
+                         ghc-boot-th-8.4.4:GHC.ForeignSrcLang.Type
+                         ghc-boot-th-8.4.4:GHC.LanguageExtensions.Type
+                         http-client-0.5.13.1:Network.HTTP.Client
+                         network-uri-2.6.1.0:Network.URI
+                         primitive-0.6.3.0:Control.Monad.Primitive
+                         primitive-0.6.3.0:Data.Primitive.Array
+                         primitive-0.6.3.0:Data.Primitive.ByteArray
+                         resourcet-1.2.2:Control.Monad.Trans.Resource.Internal
+                         tagged-0.8.5:Data.Tagged
+                         template-haskell-2.13.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.3.1:Data.Text text-1.2.3.1:Data.Text.Lazy
+                         topmovies-0.1.0.0-HqDPykmlaSdETrGbngTKrW:MovieDataType
+                         unordered-containers-0.2.9.0:Data.HashMap.Base
+                         unordered-containers-0.2.9.0:Data.HashSet
+                         uuid-types-1.0.3:Data.UUID.Types.Internal
+                         uuid-types-1.0.3:Data.UUID.Types.Internal.Builder
+                         vector-0.12.0.1:Data.Vector vector-0.12.0.1:Data.Vector.Primitive
+                         vector-0.12.0.1:Data.Vector.Storable
+                         vector-0.12.0.1:Data.Vector.Unboxed
+                         vector-0.12.0.1:Data.Vector.Unboxed.Base
+                         zlib-0.6.2:Codec.Compression.Zlib.Stream
+import  -/  HDBC-2.4.0.2:Database.HDBC 150013f2df2040efdbef3e6925dc046e
+import  -/  HDBC-2.4.0.2:Database.HDBC.SqlValue 9bf1913c3a0c08b01db3a68b06b578ad
+import  -/  HDBC-2.4.0.2:Database.HDBC.Types c6c579e1cb14bdcf9f4b35f0ce6bef4b
+import  -/  HDBC-2.4.0.2:Database.HDBC.Utils 13c92793f1bdc66b4975a51fc4d59eb2
+import  -/  HDBC-sqlite3-2.3.3.1:Database.HDBC.Sqlite3 bd578a653f42f729956b3d1212d1b114
+import  -/  base-4.11.1.0:Data.Foldable 8ed35c38958063956af33c935ea03444
+import  -/  base-4.11.1.0:Data.List 83dc843e47bfc0c5af51e19c6f3476d5
+import  -/  base-4.11.1.0:GHC.Base 604111500e81281298777e721c75643b
+import  -/  base-4.11.1.0:GHC.List 1e4357702d8d00cded0703bd293e50e8
+import  -/  base-4.11.1.0:GHC.Show 73be67392447c974f19c3befd83c46c0
+import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
+import  -/  base-4.11.1.0:System.IO 40b9aff18a55c99eb253f9a43ff9b627
+import  -/  ghc-prim-0.5.2.0:GHC.Classes 122abfcd7450c6c11602933c9ca5f80d
+import  -/  integer-gmp-1.0.2.0:GHC.Integer.Type f3d5169c3d3830854b19f6565b265403
+import  -/  Database 4935cf3ae640a23fccb7bd0fc55dba63
+  exports: edf1172b2c8fef6e01bb8ad3b182cbfe
+  dbConnect 1754ebada918271211cadc04fd4cd436
+import  -/  DownloadMovies 2252451e907dc40ef79fa54e3ca5008d
+  exports: 86b35fe2c62f46d65097d3df8d969130
+import  -/  MovieDataType 1220c84b655e5e6a9388c6c23260ae6c
+  exports: 9a516822eea0563d11606a40129e72d9
+import  -/  ParseResponse aaf71d872dcc26cb4aeeb01eec298519
+  exports: b3e35cafd03918a66042cf18fae1ee89
+1da9c90874fc3e0f8a57e41337134011
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   DatabaseQueries.$trModule3
+                   DatabaseQueries.$trModule1) -}
+3a5e14e1da08aba3368344d642e50c1c
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS DatabaseQueries.$trModule2) -}
+48667707677680b7c25f9c17a809047d
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("DatabaseQueries"#) -}
+cc967317d43420c466b03fcc7151d1a9
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS DatabaseQueries.$trModule4) -}
+b00c959f7f2beea855eb3afd19c1c667
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("topmovies-0.1.0.0-HqDPykmlaSdETrGbngTKrW"#) -}
+59306055c867f8e614ad8468a5c87537
+  actorFrequency :: GHC.Integer.Type.Integer -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                DatabaseQueries.actorFrequency1
+                  `cast`
+                (<GHC.Integer.Type.Integer>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+ee2d3e5600ec51cf7c5f1061f7b63a63
+  actorFrequency1 ::
+    GHC.Integer.Type.Integer
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (limit :: GHC.Integer.Type.Integer)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Database.dbConnect
+                        `cast`
+                      (GHC.Types.N:IO[0]
+                           <Database.HDBC.Sqlite3.ConnectionImpl.Connection>_R)
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case Database.HDBC.Utils.quickQuery'1
+                        @ Database.HDBC.Sqlite3.ConnectionImpl.Connection
+                        Database.HDBC.Sqlite3.ConnectionImpl.$fIConnectionConnection
+                        ipv1
+                        DatabaseQueries.actorFrequency4
+                        (GHC.Types.:
+                           @ Database.HDBC.SqlValue.SqlValue
+                           (Database.HDBC.SqlValue.SqlInteger limit)
+                           (GHC.Types.[] @ Database.HDBC.SqlValue.SqlValue))
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 let {
+                   exit :: GHC.Prim.State# GHC.Prim.RealWorld
+                           -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                     case ipv1 of wild { Database.HDBC.Sqlite3.ConnectionImpl.Connection ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
+                     ds3 `cast` (GHC.Types.N:IO[0] <()>_R) eta1 }
+                 } in
+                 letrec {
+                   go :: [[Database.HDBC.SqlValue.SqlValue]]
+                         -> GHC.Prim.State# GHC.Prim.RealWorld
+                         -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 2> {- Arity: 2, Strictness: <S,1*U><S,U> -}
+                   = \ (ds :: [[Database.HDBC.SqlValue.SqlValue]])
+                       (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                     case ds of wild {
+                       [] -> exit eta1
+                       : y ys
+                       -> case GHC.IO.Handle.Text.hPutStr2
+                                 GHC.IO.Handle.FD.stdout
+                                 (case y of wild1 {
+                                    [] -> GHC.Types.[] @ GHC.Types.Char
+                                    : f ds3
+                                    -> case ds3 of wild2 {
+                                         [] -> GHC.Types.[] @ GHC.Types.Char
+                                         : l ds4
+                                         -> case ds4 of wild3 {
+                                              [] -> GHC.Types.[] @ GHC.Types.Char
+                                              : counter ds5
+                                              -> case ds5 of wild4 {
+                                                   []
+                                                   -> GHC.Types.:
+                                                        @ GHC.Types.Char
+                                                        GHC.Show.$fShow(,)3
+                                                        (case Database.HDBC.SqlValue.$fConvertibleSqlValueByteString_$csafeConvert1
+                                                                f of wild5 {
+                                                           Data.Either.Left e
+                                                           -> Data.Convertible.Base.convert1
+                                                                @ GHC.Base.String
+                                                                e
+                                                           Data.Either.Right r
+                                                           -> GHC.Show.showLitString
+                                                                (GHC.Base.++
+                                                                   @ GHC.Types.Char
+                                                                   r
+                                                                   (GHC.CString.unpackAppendCString#
+                                                                      DatabaseQueries.actorFrequency3
+                                                                      (case Database.HDBC.SqlValue.$fConvertibleSqlValueByteString_$csafeConvert1
+                                                                              l of wild6 {
+                                                                         Data.Either.Left e
+                                                                         -> case e of ww { Data.Convertible.Base.ConvertError ww1 ww2 ww3 ww4 ->
+                                                                            Data.Convertible.Base.$wlvl
+                                                                              @ GHC.Base.String
+                                                                              ww1
+                                                                              ww2
+                                                                              ww3
+                                                                              ww4 }
+                                                                         Data.Either.Right r1
+                                                                         -> GHC.Base.++
+                                                                              @ GHC.Types.Char
+                                                                              r1
+                                                                              (GHC.CString.unpackAppendCString#
+                                                                                 DatabaseQueries.actorFrequency2
+                                                                                 (case Database.HDBC.SqlValue.$fConvertibleSqlValueByteString_$csafeConvert1
+                                                                                         counter of wild7 {
+                                                                                    Data.Either.Left e
+                                                                                    -> case e of ww { Data.Convertible.Base.ConvertError ww1 ww2 ww3 ww4 ->
+                                                                                       Data.Convertible.Base.$wlvl
+                                                                                         @ GHC.Base.String
+                                                                                         ww1
+                                                                                         ww2
+                                                                                         ww3
+                                                                                         ww4 }
+                                                                                    Data.Either.Right r2
+                                                                                    -> r2 })) })))
+                                                                GHC.Show.$fShow[]1 })
+                                                   : ipv4 ipv5
+                                                   -> GHC.Types.[] @ GHC.Types.Char } } } })
+                                 GHC.Types.True
+                                 eta1 of ds3 { (#,#) ipv4 ipv5 ->
+                          go ys ipv4 } }
+                 } in
+                 go ipv3 ipv2 } }) -}
+5e12330a0e8207bef274b2b19fa9d4d1
+  actorFrequency2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: (", "#) -}
+5c7a1b314952497e743fdf042bd5338d
+  actorFrequency3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: (" "#) -}
+060e37d15873a39103edf2cc4740327d
+  actorFrequency4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   DatabaseQueries.actorFrequency5) -}
+fc59e494e53d06c70cf1cd3521e1e510
+  actorFrequency5 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("SELECT starFName, starLName, COUNT ((starFName ||' '|| starLName)) FROM movieTable,starringTable,movTable_starTable WHERE movieTable.id = movTable_starTable.movieID AND starringTable.id = movTable_starTable.starringID AND (starringTable.starLName != '' AND starringTable.starFName != '' ) GROUP BY starFName,starLName HAVING COUNT((starFName ||' '|| starLName)) > 0 ORDER BY COUNT ((starFName ||' '|| starLName)) DESC LIMIT ?"#) -}
+b1dec4b8f169c4933e87d7e34852d1f9
+  delByMovieName :: GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                DatabaseQueries.delByMovieName1
+                  `cast`
+                (<GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+7b915d3b763820967f600519063d7a88
+  delByMovieName1 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (movieName :: GHC.Base.String)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Database.dbConnect
+                        `cast`
+                      (GHC.Types.N:IO[0]
+                           <Database.HDBC.Sqlite3.ConnectionImpl.Connection>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case Database.HDBC.Utils.quickQuery'1
+                        @ Database.HDBC.Sqlite3.ConnectionImpl.Connection
+                        Database.HDBC.Sqlite3.ConnectionImpl.$fIConnectionConnection
+                        ipv1
+                        DatabaseQueries.delByMovieName2
+                        (GHC.Types.:
+                           @ Database.HDBC.SqlValue.SqlValue
+                           (Database.HDBC.SqlValue.SqlString movieName)
+                           (GHC.Types.[] @ Database.HDBC.SqlValue.SqlValue))
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case ipv1 of wild { Database.HDBC.Sqlite3.ConnectionImpl.Connection ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
+                 case ds4 `cast` (GHC.Types.N:IO[0] <()>_R)
+                        ipv2 of ds19 { (#,#) ipv4 ipv5 ->
+                 ds3 `cast` (GHC.Types.N:IO[0] <()>_R) ipv4 } } } }) -}
+c76bc4d6dd6e356a6835b536eeae3b7f
+  delByMovieName2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   DatabaseQueries.delByMovieName3) -}
+3001ed63053e5c8843162452b23e51c5
+  delByMovieName3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("DELETE FROM movieTable WHERE name = ? "#) -}
+a0da12cba66df0e567b024e2ead9a426
+  dirByMovieName :: GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                DatabaseQueries.dirByMovieName1
+                  `cast`
+                (<GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+c542f20e59bf8f6da5bd84f72a60fe9b
+  dirByMovieName1 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (movieName :: GHC.Base.String)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Database.dbConnect
+                        `cast`
+                      (GHC.Types.N:IO[0]
+                           <Database.HDBC.Sqlite3.ConnectionImpl.Connection>_R)
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case Database.HDBC.Utils.quickQuery'1
+                        @ Database.HDBC.Sqlite3.ConnectionImpl.Connection
+                        Database.HDBC.Sqlite3.ConnectionImpl.$fIConnectionConnection
+                        ipv1
+                        DatabaseQueries.dirByMovieName3
+                        (GHC.Types.:
+                           @ Database.HDBC.SqlValue.SqlValue
+                           (Database.HDBC.SqlValue.SqlString movieName)
+                           (GHC.Types.[] @ Database.HDBC.SqlValue.SqlValue))
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 let {
+                   exit :: GHC.Prim.State# GHC.Prim.RealWorld
+                           -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                     case ipv1 of wild { Database.HDBC.Sqlite3.ConnectionImpl.Connection ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
+                     ds3 `cast` (GHC.Types.N:IO[0] <()>_R) eta1 }
+                 } in
+                 letrec {
+                   go :: [[Database.HDBC.SqlValue.SqlValue]]
+                         -> GHC.Prim.State# GHC.Prim.RealWorld
+                         -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 2> {- Arity: 2, Strictness: <S,1*U><S,U> -}
+                   = \ (ds :: [[Database.HDBC.SqlValue.SqlValue]])
+                       (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                     case ds of wild {
+                       [] -> exit eta1
+                       : y ys
+                       -> case GHC.IO.Handle.Text.hPutStr2
+                                 GHC.IO.Handle.FD.stdout
+                                 (case y of wild1 {
+                                    [] -> DatabaseQueries.dirByMovieName2
+                                    : f ds3
+                                    -> case ds3 of wild2 {
+                                         [] -> DatabaseQueries.dirByMovieName2
+                                         : l ds4
+                                         -> case ds4 of wild3 {
+                                              []
+                                              -> GHC.Types.:
+                                                   @ GHC.Types.Char
+                                                   GHC.Show.$fShow(,)3
+                                                   (case Database.HDBC.SqlValue.$fConvertibleSqlValueByteString_$csafeConvert1
+                                                           f of wild4 {
+                                                      Data.Either.Left e
+                                                      -> Data.Convertible.Base.convert1
+                                                           @ GHC.Base.String
+                                                           e
+                                                      Data.Either.Right r
+                                                      -> GHC.Show.showLitString
+                                                           (GHC.Base.++
+                                                              @ GHC.Types.Char
+                                                              r
+                                                              (GHC.CString.unpackAppendCString#
+                                                                 DatabaseQueries.actorFrequency3
+                                                                 (case Database.HDBC.SqlValue.$fConvertibleSqlValueByteString_$csafeConvert1
+                                                                         l of wild5 {
+                                                                    Data.Either.Left e
+                                                                    -> case e of ww { Data.Convertible.Base.ConvertError ww1 ww2 ww3 ww4 ->
+                                                                       Data.Convertible.Base.$wlvl
+                                                                         @ GHC.Base.String
+                                                                         ww1
+                                                                         ww2
+                                                                         ww3
+                                                                         ww4 }
+                                                                    Data.Either.Right r1 -> r1 })))
+                                                           GHC.Show.$fShow[]1 })
+                                              : ipv4 ipv5 -> DatabaseQueries.dirByMovieName2 } } })
+                                 GHC.Types.True
+                                 eta1 of ds3 { (#,#) ipv4 ipv5 ->
+                          go ys ipv4 } }
+                 } in
+                 go ipv3 ipv2 } }) -}
+7bba1297cb9597b40aa46cfcf49846ae
+  dirByMovieName2 :: GHC.Base.String
+  {- Strictness: x -}
+20176d42a03cd6cfc3b9913a17ae685b
+  dirByMovieName3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   DatabaseQueries.dirByMovieName4) -}
+6fe69e5b0cfaf6b808b24a5b6300566e
+  dirByMovieName4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("SELECT dirFName,dirLName FROM movieTable WHERE name = ? "#) -}
+bb3ee0f8fe335252a9fe3bf84b49d0d4
+  movieByActorName :: [GHC.Types.Char] -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                DatabaseQueries.movieByActorName1
+                  `cast`
+                (<[GHC.Types.Char]>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+6391c797cd9d1a7ba675b18d9be1e1b1
+  movieByActorName1 ::
+    [GHC.Types.Char]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (actorName :: [GHC.Types.Char])
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Database.dbConnect
+                        `cast`
+                      (GHC.Types.N:IO[0]
+                           <Database.HDBC.Sqlite3.ConnectionImpl.Connection>_R)
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case Database.HDBC.Utils.quickQuery'1
+                        @ Database.HDBC.Sqlite3.ConnectionImpl.Connection
+                        Database.HDBC.Sqlite3.ConnectionImpl.$fIConnectionConnection
+                        ipv1
+                        DatabaseQueries.movieByActorName4
+                        (GHC.Types.:
+                           @ Database.HDBC.SqlValue.SqlValue
+                           (Database.HDBC.SqlValue.SqlString
+                              (GHC.List.takeWhile
+                                 @ GHC.Types.Char
+                                 DatabaseQueries.movieByActorName3
+                                 actorName))
+                           (GHC.Types.:
+                              @ Database.HDBC.SqlValue.SqlValue
+                              (Database.HDBC.SqlValue.SqlString
+                                 (GHC.List.reverse1
+                                    @ GHC.Types.Char
+                                    (GHC.List.takeWhile
+                                       @ GHC.Types.Char
+                                       DatabaseQueries.movieByActorName3
+                                       (GHC.List.reverse1
+                                          @ GHC.Types.Char
+                                          actorName
+                                          (GHC.Types.[] @ GHC.Types.Char)))
+                                    (GHC.Types.[] @ GHC.Types.Char)))
+                              (GHC.Types.[] @ Database.HDBC.SqlValue.SqlValue)))
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 let {
+                   exit :: GHC.Prim.State# GHC.Prim.RealWorld
+                           -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                     case ipv1 of wild { Database.HDBC.Sqlite3.ConnectionImpl.Connection ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
+                     ds3 `cast` (GHC.Types.N:IO[0] <()>_R) eta1 }
+                 } in
+                 letrec {
+                   go :: [[Database.HDBC.SqlValue.SqlValue]]
+                         -> GHC.Prim.State# GHC.Prim.RealWorld
+                         -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 2> {- Arity: 2, Strictness: <S,1*U><S,U> -}
+                   = \ (ds :: [[Database.HDBC.SqlValue.SqlValue]])
+                       (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                     case ds of wild {
+                       [] -> exit eta1
+                       : y ys
+                       -> case GHC.IO.Handle.Text.hPutStr2
+                                 GHC.IO.Handle.FD.stdout
+                                 (case y of wild1 {
+                                    [] -> DatabaseQueries.movieByActorName2
+                                    : n ds3
+                                    -> case ds3 of wild2 {
+                                         []
+                                         -> GHC.Types.:
+                                              @ GHC.Types.Char
+                                              GHC.Show.$fShow(,)3
+                                              (case Database.HDBC.SqlValue.$fConvertibleSqlValueByteString_$csafeConvert1
+                                                      n of wild3 {
+                                                 Data.Either.Left e
+                                                 -> Data.Convertible.Base.convert1
+                                                      @ GHC.Base.String
+                                                      e
+                                                 Data.Either.Right r
+                                                 -> GHC.Show.showLitString r GHC.Show.$fShow[]1 })
+                                         : ipv4 ipv5 -> DatabaseQueries.movieByActorName2 } })
+                                 GHC.Types.True
+                                 eta1 of ds3 { (#,#) ipv4 ipv5 ->
+                          go ys ipv4 } }
+                 } in
+                 go ipv3 ipv2 } }) -}
+7b4cce1b936dc90c7c050c30005f56cd
+  movieByActorName2 :: GHC.Base.String
+  {- Strictness: x -}
+1cce5b52cd930d0b0a6ef06215766ff6
+  movieByActorName3 :: GHC.Types.Char -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GHC.Types.Char) ->
+                 case ds of wild { GHC.Types.C# x ->
+                 case x of wild1 {
+                   DEFAULT -> GHC.Types.True ' '# -> GHC.Types.False } }) -}
+0fefbab5b9983aca6d837b0424f795bc
+  movieByActorName4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   DatabaseQueries.movieByActorName5) -}
+aaad5f4a0e3b6e04367f462bb55a33af
+  movieByActorName5 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("SELECT name FROM movieTable,starringTable,movTable_starTable WHERE movieTable.id = movTable_starTable.movieID AND starringTable.id = movTable_starTable.starringID AND starringTable.starFName = ? AND starringTable.starLName = ? "#) -}
+f8482e334ec0d8e6a5b31de0a9f53859
+  rankByMovieName :: GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                DatabaseQueries.rankByMovieName1
+                  `cast`
+                (<GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+2305eccb874a9ead6972dfe5bbe2473a
+  rankByMovieName1 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (movieName :: GHC.Base.String)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Database.dbConnect
+                        `cast`
+                      (GHC.Types.N:IO[0]
+                           <Database.HDBC.Sqlite3.ConnectionImpl.Connection>_R)
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case Database.HDBC.Utils.quickQuery'1
+                        @ Database.HDBC.Sqlite3.ConnectionImpl.Connection
+                        Database.HDBC.Sqlite3.ConnectionImpl.$fIConnectionConnection
+                        ipv1
+                        DatabaseQueries.rankByMovieName3
+                        (GHC.Types.:
+                           @ Database.HDBC.SqlValue.SqlValue
+                           (Database.HDBC.SqlValue.SqlString movieName)
+                           (GHC.Types.[] @ Database.HDBC.SqlValue.SqlValue))
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 let {
+                   exit :: GHC.Prim.State# GHC.Prim.RealWorld
+                           -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                     case ipv1 of wild { Database.HDBC.Sqlite3.ConnectionImpl.Connection ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
+                     ds3 `cast` (GHC.Types.N:IO[0] <()>_R) eta1 }
+                 } in
+                 letrec {
+                   go :: [[Database.HDBC.SqlValue.SqlValue]]
+                         -> GHC.Prim.State# GHC.Prim.RealWorld
+                         -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 2> {- Arity: 2, Strictness: <S,1*U><S,U> -}
+                   = \ (ds :: [[Database.HDBC.SqlValue.SqlValue]])
+                       (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                     case ds of wild {
+                       [] -> exit eta1
+                       : y ys
+                       -> case GHC.IO.Handle.Text.hPutStr2
+                                 GHC.IO.Handle.FD.stdout
+                                 (case y of wild1 {
+                                    [] -> DatabaseQueries.rankByMovieName2
+                                    : r ds3
+                                    -> case ds3 of wild2 {
+                                         []
+                                         -> case Database.HDBC.SqlValue.$fConvertibleSqlValueInteger_$csafeConvert
+                                                   r of wild3 {
+                                              Data.Either.Left e
+                                              -> case e of ww { Data.Convertible.Base.ConvertError ww1 ww2 ww3 ww4 ->
+                                                 case Data.Convertible.Base.$wlvl
+                                                        @ GHC.Integer.Type.Integer
+                                                        ww1
+                                                        ww2
+                                                        ww3
+                                                        ww4
+                                                 ret_ty GHC.Base.String
+                                                 of {} }
+                                              Data.Either.Right r1
+                                              -> case GHC.Show.$w$cshowsPrec4
+                                                        0#
+                                                        r1
+                                                        (GHC.Types.[]
+                                                           @ GHC.Types.Char) of ww2 { (#,#) ww3 ww4 ->
+                                                 GHC.Types.: @ GHC.Types.Char ww3 ww4 } }
+                                         : ipv4 ipv5 -> DatabaseQueries.rankByMovieName2 } })
+                                 GHC.Types.True
+                                 eta1 of ds3 { (#,#) ipv4 ipv5 ->
+                          go ys ipv4 } }
+                 } in
+                 go ipv3 ipv2 } }) -}
+99cb96028cd91bf1df30109e3bea5de5
+  rankByMovieName2 :: GHC.Base.String
+  {- Strictness: x -}
+75c00a44f9e7e94dc65f84bb67718aef
+  rankByMovieName3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   DatabaseQueries.rankByMovieName4) -}
+9137d6d1f656c91893538eddf99d36fc
+  rankByMovieName4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("SELECT rank FROM movieTable where name = ?"#) -}
+40db313818b3fda43a1f674663f060b4
+  ratingByMovieName :: GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                DatabaseQueries.ratingByMovieName1
+                  `cast`
+                (<GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+f60a7e6726c09e0be91edb3b936cd9b4
+  ratingByMovieName1 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (movieName :: GHC.Base.String)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Database.dbConnect
+                        `cast`
+                      (GHC.Types.N:IO[0]
+                           <Database.HDBC.Sqlite3.ConnectionImpl.Connection>_R)
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case Database.HDBC.Utils.quickQuery'1
+                        @ Database.HDBC.Sqlite3.ConnectionImpl.Connection
+                        Database.HDBC.Sqlite3.ConnectionImpl.$fIConnectionConnection
+                        ipv1
+                        DatabaseQueries.ratingByMovieName3
+                        (GHC.Types.:
+                           @ Database.HDBC.SqlValue.SqlValue
+                           (Database.HDBC.SqlValue.SqlString movieName)
+                           (GHC.Types.[] @ Database.HDBC.SqlValue.SqlValue))
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 let {
+                   exit :: GHC.Prim.State# GHC.Prim.RealWorld
+                           -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                     case ipv1 of wild { Database.HDBC.Sqlite3.ConnectionImpl.Connection ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
+                     ds3 `cast` (GHC.Types.N:IO[0] <()>_R) eta1 }
+                 } in
+                 letrec {
+                   go :: [[Database.HDBC.SqlValue.SqlValue]]
+                         -> GHC.Prim.State# GHC.Prim.RealWorld
+                         -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 2> {- Arity: 2, Strictness: <S,1*U><S,U> -}
+                   = \ (ds :: [[Database.HDBC.SqlValue.SqlValue]])
+                       (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                     case ds of wild {
+                       [] -> exit eta1
+                       : y ys
+                       -> case GHC.IO.Handle.Text.hPutStr2
+                                 GHC.IO.Handle.FD.stdout
+                                 (case y of wild1 {
+                                    [] -> DatabaseQueries.ratingByMovieName2
+                                    : r ds3
+                                    -> case ds3 of wild2 {
+                                         []
+                                         -> case Database.HDBC.SqlValue.$fConvertibleSqlValueDouble_$csafeConvert
+                                                   r of wild3 {
+                                              Data.Either.Left e
+                                              -> case e of ww { Data.Convertible.Base.ConvertError ww1 ww2 ww3 ww4 ->
+                                                 case Data.Convertible.Base.$wlvl
+                                                        @ GHC.Types.Double
+                                                        ww1
+                                                        ww2
+                                                        ww3
+                                                        ww4
+                                                 ret_ty GHC.Base.String
+                                                 of {} }
+                                              Data.Either.Right r1
+                                              -> case r1 of ww { GHC.Types.D# ww1 ->
+                                                 GHC.Float.$w$sshowSignedFloat
+                                                   GHC.Float.$fShowDouble2
+                                                   GHC.Float.minExpt
+                                                   ww1
+                                                   (GHC.Types.[] @ GHC.Types.Char) } }
+                                         : ipv4 ipv5 -> DatabaseQueries.ratingByMovieName2 } })
+                                 GHC.Types.True
+                                 eta1 of ds3 { (#,#) ipv4 ipv5 ->
+                          go ys ipv4 } }
+                 } in
+                 go ipv3 ipv2 } }) -}
+ec7cc7edaa9cb5bca0458a66a263a444
+  ratingByMovieName2 :: GHC.Base.String
+  {- Strictness: x -}
+6bc1d868102f52929d5f64e575ae580b
+  ratingByMovieName3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   DatabaseQueries.ratingByMovieName4) -}
+38e4d6e9c3ffc59add3107fa3f80f329
+  ratingByMovieName4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("SELECT rating FROM movieTable WHERE name = ? "#) -}
+a7a0afd40391526d568a417e28fcc544
+  starringByMovieName :: GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                DatabaseQueries.starringByMovieName1
+                  `cast`
+                (<GHC.Base.String>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+fef432670c41f5bbf584ef3cb2a389d8
+  starringByMovieName1 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><S,U>,
+     Unfolding: (\ (movieName :: GHC.Base.String)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Database.dbConnect
+                        `cast`
+                      (GHC.Types.N:IO[0]
+                           <Database.HDBC.Sqlite3.ConnectionImpl.Connection>_R)
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case Database.HDBC.Utils.quickQuery'1
+                        @ Database.HDBC.Sqlite3.ConnectionImpl.Connection
+                        Database.HDBC.Sqlite3.ConnectionImpl.$fIConnectionConnection
+                        ipv1
+                        DatabaseQueries.starringByMovieName2
+                        (GHC.Types.:
+                           @ Database.HDBC.SqlValue.SqlValue
+                           (Database.HDBC.SqlValue.SqlString movieName)
+                           (GHC.Types.[] @ Database.HDBC.SqlValue.SqlValue))
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 let {
+                   exit :: GHC.Prim.State# GHC.Prim.RealWorld
+                           -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 1> {- Arity: 1, Strictness: <S,U> -}
+                   = \ (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                     case ipv1 of wild { Database.HDBC.Sqlite3.ConnectionImpl.Connection ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
+                     ds3 `cast` (GHC.Types.N:IO[0] <()>_R) eta1 }
+                 } in
+                 letrec {
+                   go :: [[Database.HDBC.SqlValue.SqlValue]]
+                         -> GHC.Prim.State# GHC.Prim.RealWorld
+                         -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                     <join 2> {- Arity: 2, Strictness: <S,1*U><S,U> -}
+                   = \ (ds :: [[Database.HDBC.SqlValue.SqlValue]])
+                       (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                     case ds of wild {
+                       [] -> exit eta1
+                       : y ys
+                       -> case GHC.IO.Handle.Text.hPutStr2
+                                 GHC.IO.Handle.FD.stdout
+                                 (case y of wild1 {
+                                    [] -> GHC.Types.[] @ GHC.Types.Char
+                                    : s ds3
+                                    -> case ds3 of wild2 {
+                                         []
+                                         -> GHC.Types.:
+                                              @ GHC.Types.Char
+                                              GHC.Show.$fShow(,)3
+                                              (case Database.HDBC.SqlValue.$fConvertibleSqlValueByteString_$csafeConvert1
+                                                      s of wild3 {
+                                                 Data.Either.Left e
+                                                 -> Data.Convertible.Base.convert1
+                                                      @ GHC.Base.String
+                                                      e
+                                                 Data.Either.Right r
+                                                 -> GHC.Show.showLitString r GHC.Show.$fShow[]1 })
+                                         : ipv4 ipv5 -> GHC.Types.[] @ GHC.Types.Char } })
+                                 GHC.Types.True
+                                 eta1 of ds3 { (#,#) ipv4 ipv5 ->
+                          go ys ipv4 } }
+                 } in
+                 go ipv3 ipv2 } }) -}
+8c82ade768b65b8d52f0ab1ce174568e
+  starringByMovieName2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   DatabaseQueries.starringByMovieName3) -}
+c908974598ff7ba470d05918e7d666ca
+  starringByMovieName3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("SELECT GROUP_CONCAT(DISTINCT (starFName ||' '|| starLName)) AS aName FROM movieTable JOIN movTable_starTable ON movieTable.id = movTable_starTable.movieID JOIN starringTable ON starringTable.id = movTable_starTable.starringID where  movieTable.name = ?"#) -}
+a0b6cd9760c76426c204f601354784cb
+  updByMovieName ::
+    GHC.Base.String -> GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 3, Strictness: <L,U><L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                DatabaseQueries.updByMovieName1
+                  `cast`
+                (<GHC.Base.String>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+d1cb3f1fdd2cdae08b3df196a107f82e
+  updByMovieName1 ::
+    GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3, Strictness: <L,U><L,U><S,U>,
+     Unfolding: (\ (movieName :: GHC.Base.String)
+                   (userRating :: GHC.Base.String)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Database.dbConnect
+                        `cast`
+                      (GHC.Types.N:IO[0]
+                           <Database.HDBC.Sqlite3.ConnectionImpl.Connection>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case Database.HDBC.Utils.quickQuery'1
+                        @ Database.HDBC.Sqlite3.ConnectionImpl.Connection
+                        Database.HDBC.Sqlite3.ConnectionImpl.$fIConnectionConnection
+                        ipv1
+                        DatabaseQueries.updByMovieName2
+                        (GHC.Types.:
+                           @ Database.HDBC.SqlValue.SqlValue
+                           (Database.HDBC.SqlValue.SqlString movieName)
+                           (GHC.Types.:
+                              @ Database.HDBC.SqlValue.SqlValue
+                              (Database.HDBC.SqlValue.SqlString userRating)
+                              (GHC.Types.[] @ Database.HDBC.SqlValue.SqlValue)))
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case ipv1 of wild { Database.HDBC.Sqlite3.ConnectionImpl.Connection ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ->
+                 case ds4 `cast` (GHC.Types.N:IO[0] <()>_R)
+                        ipv2 of ds19 { (#,#) ipv4 ipv5 ->
+                 ds3 `cast` (GHC.Types.N:IO[0] <()>_R) ipv4 } } } }) -}
+3b005c190f41d1fe5c6aea9bf7c21904
+  updByMovieName2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   DatabaseQueries.updByMovieName3) -}
+44af651034b822cd16bc20ced9f35909
+  updByMovieName3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("UPDATE movieTable SET rating = ? WHERE name = ? "#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -14,57 +14,87 @@ dbConnect = connectSqlite3 "DB.db"
 
 r :: (Connection -> IO a) -> IO a
 r = bracket dbConnect disconnect
-
+-- | drops all tables in the database
+dropDatabase :: IO Connection
+dropDatabase = do
+   conn <- dbConnect
+   run conn "DROP TABLE IF EXISTS movieTable" []
+   run conn "DROP TABLE IF EXISTS starringTable" []
+   run conn "DROP TABLE IF EXISTS movTable_starTable" []
+   commit conn
+   return conn
+-- | Functions to specify the SQL tables
+movieTable :: String
+movieTable =
+	"CREATE TABLE IF NOT EXISTS movieTable (\
+	\id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,\
+	\rank INTEGER NOT NULL UNIQUE ,\
+	\name VARCHAR(80) NOT NULL ,\
+	\year INTEGER NOT NULL ,\
+	\rating INTEGER NOT NULL,\
+	\dirFName VARCHAR(40) NOT NULL,\
+	\dirLName VARCHAR(40) NOT NULL);"
+starringTable :: String
+starringTable =
+	"CREATE TABLE IF NOT EXISTS starringTable (\
+        \id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, \
+        \starFName VARCHAR(40) NOT NULL, \
+        \starLName VARCHAR(40) NOT NULL)"
+movTable_starTable :: String
+movTable_starTable =
+	"CREATE TABLE IF NOT EXISTS movTable_starTable (\
+        \movieID INTEGER, \
+        \starringID INTEGER, \
+        \FOREIGN KEY(movieID) REFERENCES movieTable(id), \
+        \FOREIGN KEY(starringID) REFERENCES starringTable(id) )"
 
 -- | setupDatabase initialises the database creating tables
 setupDatabase :: IO Connection
 setupDatabase = do
-   conn <- dbConnect
-   print "Connection Successful"
-   run conn "CREATE TABLE IF NOT EXISTS movieTable (\
-                \id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,\
-                \rank INTEGER NOT NULL UNIQUE ,\
-                \name VARCHAR(80) NOT NULL ,\
-                \year INTEGER NOT NULL ,\
-                \rating REAL NOT NULL,\
-                \dirFName VARCHAR(40) NOT NULL,\
-                \dirLName VARCHAR(40) NOT NULL)" []
-   run conn "CREATE TABLE IF NOT EXISTS starringTable (\
-                \id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, \
-                \starFName VARCHAR(40) NOT NULL, \
-                \starLName VARCHAR(40) NOT NULL)" []
-   run conn "CREATE TABLE IF NOT EXISTS movTable_starTable (\
-                \movieID INTEGER, \
-                \starringID INTEGER, \
-                \FOREIGN KEY(movieID) REFERENCES movieTable(id), \
-                \FOREIGN KEY(starringID) REFERENCES starringTable(id) )" []
-   commit conn
+    conn <- dbConnect
+    print "Connection Successful"
+    run conn movieTable []
+    run conn starringTable []
+    run conn movTable_starTable []
 
-   return conn
--- | populateMovies populates movie data into a table of its own.
--- | Begins by preparing Connections
--- | Then inserts and Commit
+    commit conn
+    return conn
+
+
+insertOne :: String
+insertOne =
+	"INSERT OR REPLACE INTO movieTable(\
+	\rank,\
+	\name,\
+	\year,\
+	\rating,\
+	\dirFName,\
+	\dirLName)\
+	\VALUES (?,?,?,?,?,?)"
+insertTwo :: String
+insertTwo =
+	"INSERT OR REPLACE INTO starringTable (\
+	\starFName, \
+	\starLName) \
+        \VALUES (?,?)"
+insertThree :: String
+insertThree =
+	"INSERT OR REPLACE INTO movTable_starTable (\
+	\movieID, \
+	\starringID) \
+	\VALUES (?,?)"
+
+	-- | populateMovies populates movie data into a table of its own.
+	-- | Begins by preparing Connections
+	-- | Then inserts and Commit
+
 populateMovies :: IO ()
 populateMovies = do
      movieDataset <- readMovies
      conn <- dbConnect
-     stmt <- prepare conn "INSERT OR IGNORE INTO movieTable(\
-                                    \rank,\
-                                    \name,\
-                                    \year,\
-                                    \rating,\
-                                    \dirFName,\
-                                    \dirLName)\
-                                    \VALUES (?,?,?,?,?,?)"
-
-     stmt2 <- prepare conn "INSERT OR IGNORE INTO starringTable (\
-                             \starFName, \
-                             \starLName) \
-                             \VALUES (?,?)"
-     stmt3 <- prepare conn "INSERT OR IGNORE INTO movTable_starTable (\
-                                \movieID, \
-                                \starringID) \
-                                \VALUES (?,?)"
+     stmt <- prepare conn insertOne
+     stmt2 <- prepare conn insertTwo
+     stmt3 <- prepare conn insertThree
 
      let insertMovies a = [toSql (rank $ movieDataset !! (a-1)),
                            toSql (name $ movieDataset !! (a-1)),

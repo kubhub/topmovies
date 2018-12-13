@@ -13,7 +13,10 @@ import Data.List
 -- | Show all starring actors for a particular movie.
 starringByMovieName movieName = do
    conn <- dbConnect
-   r <- quickQuery' conn "SELECT GROUP_CONCAT(DISTINCT (starFName ||' '|| starLName)) AS aName FROM movieTable JOIN movTable_starTable ON movieTable.id = movTable_starTable.movieID JOIN starringTable ON starringTable.id = movTable_starTable.starringID where  movieTable.name = ?" [toSql (movieName::String)]
+   r <- quickQuery' conn ("SELECT GROUP_CONCAT(DISTINCT (starFName ||' '|| starLName)) " ++ 
+			 "AS aName FROM movieTable JOIN movTable_starTable ON " ++
+			 "movieTable.id = movTable_starTable.movieID JOIN starringTable " ++  
+			 "ON starringTable.id = movTable_starTable.starringID where  movieTable.name = ?") [toSql (movieName::String)]
    let rows = map convStars r
    mapM_ putStrLn rows
    disconnect conn
@@ -22,6 +25,10 @@ starringByMovieName movieName = do
           convStars [s] =
              show starring
              where starring = (fromSql s)::String
+		   star = case fromSql s of
+                             Just x -> x
+                             Nothing -> "NULL"
+          convStars x = fail $ "Unexpected result: " ++ show x
 
 
 -- | Use of DELETE.
@@ -35,16 +42,20 @@ delByMovieName movieName = do
 
 -- | Use of UPDATE.
 -- | Update a record based on a given movie name
-updByMovieName userRating movieName = do
+updByMovieName movieName userRating = do
    conn <- dbConnect
-   r <- quickQuery' conn "UPDATE movieTable SET rating = ? WHERE name = ? " [toSql (movieName::String)]
+			 --"UPDATE movieTable SET rating = :rating WHERE name = :name" [":rating" := ("updated rating" :: Int), ":name" := name]
+   r <- quickQuery' conn "UPDATE movieTable SET rating = ? WHERE name = ? " [toSql (movieName::String), toSql (userRating::String)]
    commit conn
    disconnect conn
 
 -- | The following sql query returns the movie name based on the starring actor.
 movieByActorName actorName = do
    conn <- dbConnect
-   r <- quickQuery' conn "SELECT name FROM movieTable,starringTable,movTable_starTable WHERE movieTable.id = movTable_starTable.movieID AND starringTable.id = movTable_starTable.starringID AND starringTable.starFName = ? AND starringTable.starLName = ? " [toSql ((takeWhile (/= ' ') $ actorName)::String), toSql ((reverse . takeWhile (/= ' ') $ reverse $ actorName)::String)]
+   r <- quickQuery' conn ("SELECT name FROM movieTable,starringTable,movTable_starTable " ++
+			 "WHERE movieTable.id = movTable_starTable.movieID AND " ++
+			 "starringTable.id = movTable_starTable.starringID AND starringTable.starFName = ? " ++
+			 "AND starringTable.starLName = ? ") [toSql ((takeWhile (/= ' ') $ actorName)::String), toSql ((reverse . takeWhile (/= ' ') $ reverse $ actorName)::String)]
    -- Convert each row into a String
    let rows = map convName r
    -- Print the rows out
@@ -59,7 +70,13 @@ movieByActorName actorName = do
 -- | The following sql query returns the most frequent starring actors from the database.
 actorFrequency limit = do
    conn <- dbConnect
-   r <- quickQuery' conn "SELECT starFName, starLName, COUNT ((starFName ||' '|| starLName)) FROM movieTable,starringTable,movTable_starTable WHERE movieTable.id = movTable_starTable.movieID AND starringTable.id = movTable_starTable.starringID AND (starringTable.starLName != '' AND starringTable.starFName != '' )GROUP BY starFName,starLName HAVING COUNT((starFName ||' '|| starLName)) > 0 ORDER BY COUNT ((starFName ||' '|| starLName)) DESC LIMIT ?" [toSql (limit::Integer)]
+   r <- quickQuery' conn ("SELECT starFName, starLName, COUNT ((starFName ||' '|| starLName)) " ++
+			 "FROM movieTable,starringTable,movTable_starTable " ++
+			 "WHERE movieTable.id = movTable_starTable.movieID " ++
+			 "AND starringTable.id = movTable_starTable.starringID " ++
+			 "AND (starringTable.starLName != '' AND starringTable.starFName != '' ) " ++
+			 "GROUP BY starFName,starLName HAVING COUNT((starFName ||' '|| starLName)) > 0 " ++ 
+			 "ORDER BY COUNT ((starFName ||' '|| starLName)) DESC LIMIT ?") [toSql (limit::Integer)]
 
    let rows = map convStarFreq r
    mapM_ putStrLn rows
@@ -70,6 +87,10 @@ actorFrequency limit = do
                where firstName = (fromSql f)::String
                      lastName = (fromSql l)::String
                      allStars = (fromSql counter)::String
+		     star = case fromSql counter of
+                               Just x -> x
+                               Nothing -> "NULL"
+           convStarFreq x = fail $ "Unexpected result: " ++ show x
 
 
 -- | The following sql query returns the name of the director based on the movie name

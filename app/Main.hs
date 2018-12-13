@@ -11,6 +11,8 @@ import Data.Aeson
 -- | Build the database and populate the data
 populate = do
    downloadPage
+   dropDatabase
+
    setupDatabase
    populateMovies
 
@@ -50,12 +52,14 @@ main = do
                                           name <- getLine
                                           let outStr = delByMovieName name
                                           outStr
+					  print $ name ++ " deleted"
                                   "5" -> do
                                           putStrLn "Type a movie name e.g Mandy"
                                           name <- getLine
                                           putStrLn "Type new rating to update rank e.g. 75"
                                           userRating <- getLine
                                           updByMovieName userRating name
+					  print $ "The rating for " ++ name ++ " has been changed to " ++ userRating
                                   "6" -> do
                                           putStrLn "Type a movie name e.g Upgrade"
                                           name <- getLine

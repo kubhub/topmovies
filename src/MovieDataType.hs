@@ -10,7 +10,7 @@ data Movie = Movie {
       name :: String,       --Movie name
       director :: String,   --Movie Director
       year :: Int,          --Year produced
-      rating :: Double,     --Rating by rottentomatoes
+      rating :: Int,     --Rating by rottentomatoes
       starring :: String    --Starring Actors
       } deriving (Eq, Generic, Show)
 
