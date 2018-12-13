@@ -44,7 +44,6 @@ delByMovieName movieName = do
 -- | Update a record based on a given movie name
 updByMovieName movieName userRating = do
    conn <- dbConnect
-			 --"UPDATE movieTable SET rating = :rating WHERE name = :name" [":rating" := ("updated rating" :: Int), ":name" := name]
    r <- quickQuery' conn "UPDATE movieTable SET rating = ? WHERE name = ? " [toSql (movieName::String), toSql (userRating::String)]
    commit conn
    disconnect conn
@@ -97,7 +96,6 @@ actorFrequency limit = do
 dirByMovieName movieName = do
    conn <- dbConnect
    r <- quickQuery' conn "SELECT dirFName,dirLName FROM movieTable WHERE name = ? " [toSql (movieName::String)]
-   --print query
    let rows = map convDirName r
    mapM_ putStrLn rows
    disconnect conn
@@ -111,7 +109,6 @@ dirByMovieName movieName = do
 ratingByMovieName movieName = do
    conn <- dbConnect
    r <- quickQuery' conn "SELECT rating FROM movieTable WHERE name = ? " [toSql (movieName::String)]
-   --print query
    let rows = map convRating r
    mapM_ putStrLn rows
    disconnect conn
@@ -126,7 +123,6 @@ ratingByMovieName movieName = do
 rankByMovieName movieName = do
    conn <- dbConnect
    r <- quickQuery' conn "SELECT rank FROM movieTable where name = ?" [toSql (movieName::String)]
-   --print query
    let rows = map convRank r
    mapM_ putStrLn rows
    disconnect conn

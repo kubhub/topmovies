@@ -39,22 +39,26 @@ main = do
                                          putStrLn "Type Actors name e.g Nicolas Cage"
                                          name <- getLine
                                          let outStr = movieByActorName name
+					 print $ name ++ " appears in the following movie: " 
                                          outStr
 
-                                  "2" -> do actorFrequency 10
+                                  "2" -> do 
+					 print $ "Most frequent stars appearing on the list: " 
+					 actorFrequency 10
                                   "3" -> do
                                          putStrLn "Type a movie name e.g Overlord"
                                          name <- getLine
                                          let outStr = ratingByMovieName name
+                                         print $ name ++ " has the following rating: " 
                                          outStr
                                   "4" -> do
-                                          putStrLn "Type a movie name e.g Mountain"
+                                          putStrLn "Type a movie name to delete e.g Mountain"
                                           name <- getLine
                                           let outStr = delByMovieName name
                                           outStr
-					  print $ name ++ " deleted"
+					  print $ name ++ " has been deleted"
                                   "5" -> do
-                                          putStrLn "Type a movie name e.g Mandy"
+                                          putStrLn "Type a movie name to update its rating e.g Mandy"
                                           name <- getLine
                                           putStrLn "Type new rating to update rank e.g. 75"
                                           userRating <- getLine
@@ -64,6 +68,7 @@ main = do
                                           putStrLn "Type a movie name e.g Upgrade"
                                           name <- getLine
                                           let outStr = rankByMovieName name
+					  print $ name ++ " has a rank of: "
                                           outStr
                                           print $ "out of 152"
 
@@ -71,9 +76,11 @@ main = do
                                           putStrLn "Type a movie name e.g Blaze"
                                           name <- getLine
                                           let outStr = starringByMovieName name
+                                          print $ "The following stars appear in " ++ name ++ ":" 
                                           outStr
                                   "8" -> do
                                           generateJson
+					  print $ "DB.json has been genereated."
                    when (option /= "-1") loop
 
 
